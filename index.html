@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Descubra em 3 minutos seu nível nos 5 pilares da gestão de obras. Diagnóstico gratuito do Método Zanella.">
+<meta property="og:title" content="Diagnóstico Método Zanella">
+<meta property="og:description" content="Você é técnico ou gestor de obras? Descubra em 3 minutos.">
+<title>Diagnóstico Método Zanella</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06121c; --card:#0c1f2e; --card2:#10283b; --line:#1c3a52;
+  --blue:#43b3f7; --deep:#076d9d; --text:#eaf4fb; --muted:#8fb0c6;
+  --ok:#3ddc97; --warn:#f7b543; --bad:#f76b6b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -200px,#0b2a40 0%,var(--bg) 60%);background-color:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;min-height:100vh;line-height:1.5}
+.wrap{max-width:640px;margin:0 auto;padding:28px 16px 60px}
+.brand{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:28px}
+.logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--deep));display:grid;place-items:center;font-family:'Bebas Neue';font-size:28px;color:#fff}
+.brand span{font-family:'Bebas Neue';letter-spacing:2px;font-size:22px}
+.brand small{display:block;font-family:Inter;font-size:11px;color:var(--muted);letter-spacing:1px;margin-top:-4px}
+h1,h2,h3{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:1px;line-height:1.05}
+h1{font-size:clamp(42px,9vw,64px);text-align:center}
+h1 em{font-style:normal;color:var(--blue)}
+.lead{color:var(--muted);text-align:center;margin:14px auto 26px;max-width:480px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:26px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+.stat b{font-family:'Bebas Neue';font-size:34px;color:var(--blue);font-weight:400;display:block;line-height:1}
+.stat span{font-size:12px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:16px 22px;border:0;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--deep));color:#fff;font:600 16px Inter;cursor:pointer;transition:transform .15s,opacity .15s;text-decoration:none}
+.btn:hover{transform:translateY(-1px)}
+.btn:disabled{opacity:.35;cursor:not-allowed;transform:none}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.row{display:flex;gap:10px;margin-top:22px}
+.row .btn.ghost{width:38%}
+.author{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:22px}
+.avatar{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#1d4f72,#0a2d44);display:grid;place-items:center;font-family:'Bebas Neue';font-size:24px;flex:none;border:2px solid var(--blue)}
+.author p{font-size:14px;color:var(--muted)}
+.author strong{color:var(--text)}
+.progress{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:8px}
+.bar{height:6px;background:var(--card2);border-radius:99px;overflow:hidden;margin-bottom:22px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--deep),var(--blue));border-radius:99px;transition:width .35s}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 20px}
+.tag{display:inline-block;font-size:12px;font-weight:600;color:var(--blue);background:rgba(67,179,247,.1);border:1px solid rgba(67,179,247,.25);padding:4px 10px;border-radius:99px;margin-bottom:12px}
+.q{font-size:18px;font-weight:600;margin-bottom:16px}
+.opt{display:block;width:100%;text-align:left;background:var(--card2);border:1px solid var(--line);color:var(--text);padding:14px 16px;border-radius:12px;margin-bottom:10px;font:500 15px Inter;cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--deep)}
+.opt.sel{border-color:var(--blue);background:rgba(67,179,247,.12)}
+label{display:block;font-size:14px;font-weight:600;margin:14px 0 6px}
+input{width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--card2);color:var(--text);font:15px Inter}
+input:focus{outline:none;border-color:var(--blue)}
+.err{color:var(--bad);font-size:13px;margin-top:10px;min-height:18px}
+.lock{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);margin-top:14px}
+.score{text-align:center;margin:8px 0 18px}
+.ring{width:170px;height:170px;margin:0 auto 12px;position:relative}
+.ring svg{transform:rotate(-90deg)}
+.ring .num{position:absolute;inset:0;display:grid;place-items:center;font-family:'Bebas Neue';font-size:52px}
+.ring .num small{display:block;font-size:16px;color:var(--muted);font-family:Inter;margin-top:-30px}
+.level{font-size:34px;color:var(--blue)}
+.pillar{margin:14px 0}
+.pillar div{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px}
+.pillar .track{height:10px;background:var(--card2);border-radius:99px;overflow:hidden}
+.pillar .track i{display:block;height:100%;border-radius:99px;transition:width .8s}
+.insight{background:linear-gradient(135deg,rgba(67,179,247,.12),rgba(7,109,157,.12));border:1px solid rgba(67,179,247,.3);border-radius:14px;padding:16px;margin:20px 0;font-size:15px}
+.insight b{color:var(--blue)}
+.note{font-size:12px;color:var(--muted);text-align:center;margin-top:18px}
+.screen{display:none;animation:fade .35s}
+.screen.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.preview{position:fixed;top:0;left:0;right:0;background:#f7b543;color:#1a1200;font-size:12px;font-weight:600;text-align:center;padding:5px}
+</style>
+</head>
+<body>
+<div class="wrap" >
+  <div class="brand"><div class="logo">Z</div><div><span>MÉTODO ZANELLA</span><small>GESTÃO DE OBRAS E CARREIRA</small></div></div>
+
+  <!-- INTRO -->
+  <section class="screen on" id="intro">
+    <h1>Você é técnico ou <em>gestor de obras?</em></h1>
+    <p class="lead">Descubra em 3 minutos em que nível você está nos 5 pilares que separam quem executa de quem lidera obras e projetos industriais.</p>
+    <div class="stats">
+      <div class="stat"><b>10</b><span>perguntas</span></div>
+      <div class="stat"><b>5</b><span>pilares</span></div>
+      <div class="stat"><b>3 min</b><span>tempo</span></div>
+    </div>
+    <button class="btn" onclick="go(0)">Fazer meu diagnóstico →</button>
+    <div class="author">
+      <div class="avatar">EZ</div>
+      <p><strong>Emerson Zanella</strong><br>+20 anos em obras industriais. Criei este diagnóstico com o que realmente pesa na hora de uma promoção para gestão.</p>
+    </div>
+  </section>
+
+  <!-- QUESTIONS -->
+  <section class="screen" id="quiz">
+    <div class="progress"><span id="pLabel"></span><span id="pPct"></span></div>
+    <div class="bar"><i id="pBar"></i></div>
+    <div class="card">
+      <span class="tag" id="qTag"></span>
+      <p class="q" id="qText"></p>
+      <div id="qOpts"></div>
+    </div>
+    <div class="row">
+      <button class="btn ghost" onclick="back()">← Voltar</button>
+      <button class="btn" id="nextBtn" onclick="next()" disabled>Próxima →</button>
+    </div>
+  </section>
+
+  <!-- LEAD -->
+  <section class="screen" id="lead">
+    <div class="progress"><span>Último passo</span><span>95%</span></div>
+    <div class="bar"><i style="width:95%"></i></div>
+    <div class="card">
+      <span class="tag">🔓 Seu resultado está pronto</span>
+      <h2 style="font-size:34px">Para onde envio seu diagnóstico?</h2>
+      <p style="color:var(--muted);font-size:14px;margin-top:6px">Você vê o resultado na hora e recebe a análise completa no WhatsApp.</p>
+      <label for="nome">Nome e sobrenome</label>
+      <input id="nome" placeholder="Ex.: João Silva" autocomplete="name">
+      <label for="zap">WhatsApp (com DDD)</label>
+      <input id="zap" placeholder="(38) 99999-9999" inputmode="tel" autocomplete="tel">
+      <label for="insta">@ do Instagram <span style="color:var(--muted);font-weight:400">(opcional)</span></label>
+      <input id="insta" placeholder="@seuperfil">
+      <div class="err" id="err"></div>
+      <button class="btn" onclick="finish()">Ver meu resultado →</button>
+      <div class="lock">🔒 Ao continuar, você autoriza o contato do Emerson Zanella pelo WhatsApp sobre este diagnóstico. Seus dados não são compartilhados.</div>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section class="screen" id="result">
+    <div class="score">
+      <div class="ring">
+        <svg width="170" height="170"><circle cx="85" cy="85" r="74" stroke="#10283b" stroke-width="12" fill="none"/><circle id="arc" cx="85" cy="85" r="74" stroke="url(#g)" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="465" stroke-dashoffset="465" style="transition:stroke-dashoffset 1.2s"/><defs><linearGradient id="g"><stop offset="0" stop-color="#076d9d"/><stop offset="1" stop-color="#43b3f7"/></linearGradient></defs></svg>
+        <div class="num"><span id="scoreNum">0</span></div>
+      </div>
+      <p style="color:var(--muted)" id="hello"></p>
+      <h2 class="level" id="levelName"></h2>
+      <p style="color:var(--muted);margin-top:6px;font-size:15px" id="levelDesc"></p>
+    </div>
+    <div class="card">
+      <h3 style="font-size:24px;margin-bottom:4px">Seus 5 pilares</h3>
+      <div id="pillars"></div>
+    </div>
+    <div class="insight" id="insight"></div>
+    <div class="card" style="text-align:center">
+      <h3 style="font-size:28px">Direcionamento Gratuito de Carreira</h3>
+      <p style="color:var(--muted);font-size:14px;margin:8px 0 16px">Uma conversa individual comigo para montar o plano do seu próximo cargo a partir deste diagnóstico. <b style="color:var(--text)">Vagas limitadas por semana.</b></p>
+      <a class="btn" id="zapBtn" target="_blank" rel="noopener">💬 Quero agendar minha sessão</a>
+    </div>
+    
+  </section>
+</div>
+
+<script>
+const API='https://script.google.com/macros/s/AKfycbwY0kZTQ6lSgjsW9C56ioQjGt5GmmpLgbkROOruSedH1HjbSIckOc_JwMa8bQVmW-Z-ZQ/exec';
+const PILLARS=["Planejamento e Prazo","Custos e Contratos","Liderança de Equipe","Segurança e Qualidade","Posicionamento"];
+const COLORS=["#43b3f7","#2a9ad8","#1784bd","#3ddc97","#f7b543"];
+const Q=[
+ {p:0,t:"Você consegue montar e acompanhar um cronograma físico de obra (EAP, caminho crítico, curva S)?",o:["Nunca fiz","Já vi, mas não domino","Acompanho o que outros montam","Monto e controlo sozinho"]},
+ {p:0,t:"Quando a obra atrasa, o que você faz?",o:["Espero o gestor decidir","Aviso que atrasou","Proponho alguma solução","Apresento plano de recuperação com dados"]},
+ {p:1,t:"Você sabe ler um contrato e identificar escopo, aditivos e riscos de pleito?",o:["Nunca tive contato","Leio, mas não entendo bem","Entendo o básico","Analiso e negocio com segurança"]},
+ {p:1,t:"Você acompanha custo previsto x realizado da sua frente de trabalho?",o:["Não tenho acesso","Sei por alto","Acompanho às vezes","Controlo e reporto mensalmente"]},
+ {p:2,t:"Você já liderou uma equipe em campo (encarregados, técnicos, terceiros)?",o:["Nunca","Informalmente, poucas vezes","Lidero pequenas equipes","Lidero equipes e terceiros com frequência"]},
+ {p:2,t:"Em reunião com cliente ou fiscalização, como você se sente?",o:["Evito participar","Participo calado","Falo quando perguntam","Conduzo e defendo minha posição"]},
+ {p:3,t:"Você conhece as NRs e procedimentos de qualidade aplicados à sua obra?",o:["Quase nada","Conheço as principais por nome","Aplico no dia a dia","Treino a equipe e cobro"]},
+ {p:3,t:"Você registra e trata não conformidades e lições aprendidas?",o:["Não","Raramente","Quando cobram","É rotina para mim"]},
+ {p:4,t:"Seu gestor sabe claramente quais resultados você entregou no último ano?",o:["Acho que não","Talvez","Em parte","Sim, eu apresento"]},
+ {p:4,t:"Você tem um plano claro para o seu próximo cargo e salário?",o:["Não tenho","Só uma ideia vaga","Tenho objetivo, mas sem plano","Tenho meta, prazo e plano"]},
+ {p:-1,tag:"Seu perfil",t:"Qual é o seu momento hoje?",o:["Estudante de engenharia ou técnico","Recém-formado (até 3 anos)","Engenheiro(a) ou técnico(a) com +3 anos de experiência","Já sou líder/coordenador e quero subir"]},
+ {p:-1,tag:"Seu perfil",t:"Se fizer sentido para você, está disposto(a) a investir no seu desenvolvimento agora?",o:["Sim, quero acelerar","Talvez, depende da proposta","Não no momento"]}
+];
+const A=new Array(Q.length).fill(null); let i=0;
+const $=id=>document.getElementById(id);
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));$(id).classList.add('on');window.scrollTo(0,0)}
+function go(n){i=n;show('quiz');render()}
+function render(){
+  const q=Q[i];const pct=Math.round(i/Q.length*90);
+  $('pLabel').textContent=`Pergunta ${i+1} de ${Q.length}`;$('pPct').textContent=pct+'%';$('pBar').style.width=pct+'%';
+  $('qTag').textContent=q.p>=0?`Pilar ${q.p+1} · ${PILLARS[q.p]}`:q.tag;
+  $('qText').textContent=q.t;
+  $('qOpts').innerHTML=q.o.map((o,k)=>`<button class="opt${A[i]===k?' sel':''}" onclick="pick(${k})">${o}</button>`).join('');
+  $('nextBtn').disabled=A[i]===null;
+}
+function pick(k){A[i]=k;render();setTimeout(next,220)}
+function next(){if(A[i]===null)return;if(i<Q.length-1){i++;render()}else show('lead')}
+function back(){if(i>0){i--;render()}else show('intro')}
+function finish(){
+  const n=$('nome').value.trim(),z=$('zap').value.replace(/\D/g,'');
+  if(n.split(' ').length<2){$('err').textContent='Informe nome e sobrenome.';return}
+  if(z.length<10){$('err').textContent='Informe um WhatsApp válido com DDD.';return}
+  $('err').textContent='';result(n.split(' ')[0],{nome:n,zap:z,insta:$('insta').value.trim()})
+}
+function result(first,lead){
+  const ps=[0,0,0,0,0];Q.forEach((q,k)=>{if(q.p>=0)ps[q.p]+=A[k]});
+  const pct=ps.map(v=>Math.round(v/6*100));
+  const total=Math.round(ps.reduce((a,b)=>a+b,0)/30*100);
+  const L=total<35?["Executor","Você ainda está na base técnica. A boa notícia: com direção certa, a evolução nessa fase é a mais rápida."]
+        :total<60?["Técnico em Transição","Você já entrega, mas ainda não é visto como gestor. Faltam peças específicas para dar o salto."]
+        :total<85?["Líder em Formação","Você já tem base de gestão. Agora é questão de estratégia e posicionamento para assumir o cargo."]
+        :["Gestor Estratégico","Você tem perfil de gestão. O próximo passo é escala: cargos maiores e salário à altura."];
+  show('result');
+  $('hello').textContent=`${first}, seu nível é:`;
+  $('levelName').textContent=L[0];$('levelDesc').textContent=L[1];
+  let c=0;const t=setInterval(()=>{c++;$('scoreNum').textContent=c;if(c>=total)clearInterval(t)},14);if(total===0)clearInterval(t);
+  setTimeout(()=>$('arc').style.strokeDashoffset=465-465*total/100,80);
+  $('pillars').innerHTML=PILLARS.map((p,k)=>`<div class="pillar"><div><span>${p}</span><b>${pct[k]}%</b></div><div class="track"><i style="width:0;background:${COLORS[k]}" data-w="${pct[k]}"></i></div></div>`).join('');
+  setTimeout(()=>document.querySelectorAll('.track i').forEach(e=>e.style.width=e.dataset.w+'%'),120);
+  const w=pct.indexOf(Math.min(...pct));
+  const tips=["Quem controla prazo com dados é quem o diretor chama para coordenar. É o primeiro ponto a destravar.","Custos e contratos são a linguagem da diretoria. Dominar isso muda como você é visto na obra.","Gestão é resultado através de pessoas. Sem liderança de campo, a promoção não vem.","Segurança e qualidade são inegociáveis em obra industrial. Esse pilar te tira da disputa se estiver fraco.","Competência que ninguém vê não gera promoção. Você precisa tornar seus resultados visíveis."];
+  $('insight').innerHTML=`<b>Seu ponto de maior alavanca: ${PILLARS[w]}.</b><br>${tips[w]}`;
+  const msg=`Olá, Emerson! Sou ${first}, fiz o diagnóstico e meu nível foi "${L[0]}" (${total}/100). Quero agendar meu Direcionamento Gratuito.`;
+  try{fetch(API,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({nome:lead.nome,zap:lead.zap,insta:lead.insta,total:total,nivel:L[0],pilares:pct,momento:Q[10].o[A[10]],investir:Q[11].o[A[11]],fraco:PILLARS[w]})})}catch(e){}
+  $('zapBtn').href='https://wa.me/5512988731988?text='+encodeURIComponent(msg);
+}
+</script>
+</body>
+</html>
